@@ -15,7 +15,9 @@
     "express": "^4.17.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "underscore": "^1.10.2"
+    "underscore": "^1.10.2",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
   },
   "devDependencies": {
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
