@@ -4,13 +4,16 @@ const { dbConfig } = require('./pg.config.js');
 
 const client = new Client(dbConfig);
 
-client.connect(() => {
-  console.log(`Database connection achieved!`);
-});
+client.connect();
 
-client.query('select * from roomtable', (err, results) => {
-  if (err) {
-    console.error(err);
-  }
-  console.log(results.rows);
-});
+module.exports = client;
+
+client.end();
+// working example of a query:
+
+  // client.query('select * from roomtable', (err, results) => {
+  //   if (err) {
+  //     console.error(err);
+  //   }
+  //   console.log(results.rows); // returning the data correctly!
+  // });
