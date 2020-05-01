@@ -8,7 +8,6 @@ client.connect();
 
 module.exports = client;
 
-client.end();
 // working example of a query:
 
   // client.query('select * from roomtable', (err, results) => {
