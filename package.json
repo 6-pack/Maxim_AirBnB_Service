@@ -11,6 +11,8 @@
     "seed": "psql -U postgres < schema.sql"
   },
   "dependencies": {
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4"
   },
   "devDependencies": {
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
