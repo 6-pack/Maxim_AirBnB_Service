@@ -8,12 +8,14 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "seed": "psql -U postgres < schema.sql"
+    "seed": "psql -U postgres < schema.sql",
+    "react-dev": "webpack -d --watch",
+    "server-dev": "nodemon server/index.js"
   },
   "dependencies": {
+    "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
     "@babel/preset-react": "^7.9.4",
-    "@babel/core": "^7.9.6",
     "axios": "^0.19.2",
     "babel-cli": "^6.26.0",
     "babel-loader": "^8.1.0",
@@ -21,6 +23,7 @@
     "eslint": "^6.8.0",
     "express": "^4.17.1",
     "jest": "^25.5.3",
+    "path": "^0.12.7",
     "pg": "^8.0.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
