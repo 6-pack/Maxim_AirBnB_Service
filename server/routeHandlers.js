@@ -8,11 +8,7 @@ module.exports = {
         console.error(err);
         return;
       }
-      const roomNums = [];
-      for (var element of room_results.rows) {
-        roomNums.push(element.room_id);
-      }
-      res.status(200).send();
+      res.status(200).send(room_results.rows);
     });
   },
 }
