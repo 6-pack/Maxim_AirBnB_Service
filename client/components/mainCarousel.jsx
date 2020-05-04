@@ -1,8 +1,8 @@
 import React from 'react';
-import mainCarElement from './mainCarElement.jsx';
-import mainCarArrows from './mainCarArrows.jsx';
+import MainCarElement from './mainCarElement.jsx';
+import MainCarArrows from './mainCarArrows.jsx';
 
-class mainCarousel extends React.Component {
+class MainCarousel extends React.Component {
   constructor(props) {
     super(props);
     this.state={
@@ -35,22 +35,24 @@ class mainCarousel extends React.Component {
   }
 
   render() {
-    <div className='mainCarousel'>
+    return (
+      <div className='mainCarousel'>
 
-      <mainCarArrows
-        direction={'left'}
-        // clickFunction={/*PREVIOUS SLIDE*/}
-        glyph="&#9664;"/>
+        <MainCarArrows
+          direction="left"
+          clickFunction={this.previousElement}
+          glyph="&#9664;"/>
 
-      <mainCarElement url={imgUrl} />
+        <MainCarElement url={this.props.data[this.state.currentElementIndex]} />
 
-      <mainCarArrows
-        direction={'right'}
-        // clickFunction={/*NEXT SLIDE*/}
-        glyph="&#9654;" />
+        <MainCarArrows
+          direction="right"
+          clickFunction={this.nextElement}
+          glyph="&#9654;"/>
 
-    </div>
+      </div>
+    )
   }
 }
 
-export default mainCarousel;
+export default MainCarousel;

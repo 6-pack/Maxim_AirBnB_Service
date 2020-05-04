@@ -24,5 +24,5 @@ CREATE TABLE roomTable (
 INSERT INTO hostTable (name) VALUES ('host1');
 INSERT INTO hostTable (name) VALUES ('host2');
 
-INSERT INTO roomTable (host_id, location, rating, room_type, bed_num, description, price_per_night, img_src) VALUES (1, 'Nasvhille, TN', 4.4, 'Mansion', 6, 'A frat boys dream come true.', 60, '{img_src_1, img_src_2, img_src_3}');
-INSERT INTO roomTable (host_id, location, rating, room_type, bed_num, description, price_per_night, img_src) VALUES (1, 'Nashville, TN', 4.7, 'Towers', 24, 'Another frat boys dream come true.', 25, '{img_src_4, img_src_5, img_src_6}');
+INSERT INTO roomTable (host_id, location, rating, room_type, bed_num, description, price_per_night, img_src) VALUES (1, 'Nasvhille, TN', 4.4, 'Mansion', 6, 'A frat boys dream come true.', 60, '{https://loremflickr.com/cache/resized/65535_49259266533_6deda510e9_320_240_nofilter.jpg, https://loremflickr.com/cache/resized/65535_49259266533_6deda510e9_320_240_nofilter.jpg, https://loremflickr.com/cache/resized/65535_49259266533_6deda510e9_320_240_nofilter.jpg}');
+INSERT INTO roomTable (host_id, location, rating, room_type, bed_num, description, price_per_night, img_src) VALUES (1, 'Nashville, TN', 4.7, 'Towers', 24, 'Another frat boys dream come true.', 25, '{https://loremflickr.com/cache/resized/65535_49259266533_6deda510e9_320_240_nofilter.jpg, https://loremflickr.com/cache/resized/65535_49259266533_6deda510e9_320_240_nofilter.jpg, https://loremflickr.com/cache/resized/65535_49259266533_6deda510e9_320_240_nofilter.jpg}');

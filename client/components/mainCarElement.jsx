@@ -1,6 +1,6 @@
 import React from 'react';
 
-const mainCarElement = ({url}) => {
+const MainCarElement = ({url}) => {
   const styles = {
     backgroundImage: `url(${url})`,
     backgroundSize: 'cover',
@@ -19,4 +19,4 @@ const mainCarElement = ({url}) => {
 
 // notes: eventually replace background image for mainCarElement with a carousel for an element specifically
 
-export default mainCarElement;
+export default MainCarElement;
