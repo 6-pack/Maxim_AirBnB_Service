@@ -11,3 +11,5 @@ const mainCarElement = ({url}) => {
     <div className='mainCarElement' style={styles}></div>
   )
 }
+
+export default mainCarElement;
