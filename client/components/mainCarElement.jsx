@@ -8,8 +8,15 @@ const mainCarElement = ({url}) => {
   };
 
   return (
-    <div className='mainCarElement' style={styles}></div>
+    <div>
+      <div className='mainCarElement' style={styles}></div>
+      <div></div>
+    </div>
   )
 }
+
+// ToDo: add all elements of each data packet
+
+// notes: eventually replace background image for mainCarElement with a carousel for an element specifically
 
 export default mainCarElement;

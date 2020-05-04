@@ -14,11 +14,11 @@ class App extends React.Component {
   componentDidMount() {
     Axios.get('/rooms')
       .then((results) => {
-        console.log(results.data);
         this.setState({
           data: results.data
         })
       })
+      .catch((err) => {console.error(err)})
   }
 
   render() {

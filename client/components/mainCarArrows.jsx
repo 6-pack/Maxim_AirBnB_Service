@@ -8,4 +8,4 @@ const mainCarArrows = ({direction, clickFunction, glyph}) (
   </div>
 );
 
-export default mainCarArrows
+export default mainCarArrows;
