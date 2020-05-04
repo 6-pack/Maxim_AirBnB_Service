@@ -12,8 +12,10 @@ class App extends React.Component {
 
   render() {
   return (
-    <div id='test'>Hello from React!</div>
-  )
+    <div>
+      <div className='test'>Hello from React!</div>
+    </div>
+    )
   }
 }
 
