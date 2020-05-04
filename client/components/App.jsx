@@ -5,17 +5,17 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      someState: ''
+      someState: '',
     };
   }
 
 
   render() {
-  return (
-    <div>
-      <div className='test'>Hello from React!</div>
-    </div>
-    )
+    return (
+      <div>
+        <div className="test">Hello from React!</div>
+      </div>
+    );
   }
 }
 

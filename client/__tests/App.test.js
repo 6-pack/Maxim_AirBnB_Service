@@ -13,7 +13,7 @@ describe('B suite', () => {
   it('should show text',  () => {
     const wrapper = shallow(<App />);
     const text = wrapper.find('.test');
-    expect(text.text()).toBe('Hello from React!')
+    expect(text.text()).toBe('Hello from React!');
   })
   it('Should exist', () => {
     const wrapper = shallow(<App />);
