@@ -13,7 +13,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <div className="test">Hello from React!</div>
+        <div className='mainCarousel'></div>
       </div>
     );
   }
