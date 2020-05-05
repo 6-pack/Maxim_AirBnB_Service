@@ -1,6 +1,6 @@
 import React from 'react';
-import MainCarElement from './mainCarElement.jsx';
-import MainCarArrows from './mainCarArrows.jsx';
+import MainCarElement from './MainCarElement.jsx';
+import MainCarArrows from './MainCarArrows.jsx';
 
 class MainCarousel extends React.Component {
   constructor(props) {

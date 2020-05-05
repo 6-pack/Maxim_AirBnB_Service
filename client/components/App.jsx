@@ -1,5 +1,5 @@
 import React from 'react';
-import MainCarousel from './mainCarousel.jsx';
+import MainCarousel from './MainCarousel.jsx';
 import Axios from 'axios';
 
 class App extends React.Component {
