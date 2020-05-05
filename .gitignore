@@ -5,3 +5,6 @@ db/pg.config.js
 public/bundle.js
 
 .eslintrc.js
+
+coverage
+
