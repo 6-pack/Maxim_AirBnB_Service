@@ -46,7 +46,7 @@ describe('Unit tests', () => {
   test('should render app component on screen', () => {
     const wrapper = mount(<App />);
     expect(wrapper).toExist();
-  })
+  });
 
 
 })
