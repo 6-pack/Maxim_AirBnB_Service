@@ -7,20 +7,51 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      data: ["https://loremflickr.com/cache/resized/65535_49572202277_66c2c96d9d_320_240_nofilter.jpg", "https://loremflickr.com/cache/resized/65535_49457779677_e4115cb632_n_320_240_nofilter.jpg", "https://loremflickr.com/cache/resized/8278_30155121522_de3bc7cecd_n_320_240_nofilter.jpg"]
+      data: [
+        {
+          "room_id": 1,
+          "host_id": 1,
+          "location": "Nasvhille, TN",
+          "rating": 4.4,
+          "room_type": "Mansion",
+          "bed_num": 6,
+          "description": "A frat boys dream come true.",
+          "price_per_night": 60,
+          "img_src": [
+            "https://loremflickr.com/cache/resized/65535_49259266533_6deda510e9_320_240_nofilter.jpg",
+            "https://loremflickr.com/cache/resized/65535_49259266533_6deda510e9_320_240_nofilter.jpg",
+            "https://loremflickr.com/cache/resized/65535_49259266533_6deda510e9_320_240_nofilter.jpg"
+          ]
+        },
+        {
+          "room_id": 2,
+          "host_id": 1,
+          "location": "Nashville, TN",
+          "rating": 4.7,
+          "room_type": "Towers",
+          "bed_num": 24,
+          "description": "Another frat boys dream come true.",
+          "price_per_night": 25,
+          "img_src": [
+            "https://loremflickr.com/cache/resized/65535_47722650711_107f705e93_320_240_nofilter.jpg",
+            "https://loremflickr.com/cache/resized/65535_47722650711_107f705e93_320_240_nofilter.jpg",
+            "https://loremflickr.com/cache/resized/65535_47722650711_107f705e93_320_240_nofilter.jpg"
+          ]
+        }
+      ]
     };
   }
 
-  // componentDidMount() {
-  //   Axios.get('/rooms')
-  //     .then((results) => {
-  //       console.log(results.data);
-  //       this.setState({
-  //         data: results.data
-  //       })
-  //     })
-  //     .catch((err) => {console.error(err)})
-  // }
+  componentDidMount() {
+    Axios.get('/rooms')
+      .then((results) => {
+        console.log(results.data);
+        this.setState({
+          data: results.data
+        })
+      })
+      .catch((err) => {console.error(err)})
+  }
 
   render() {
     return (

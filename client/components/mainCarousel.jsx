@@ -43,7 +43,7 @@ class MainCarousel extends React.Component {
           clickFunction={this.previousElement}
           glyph="&#9664;"/>
 
-        <MainCarElement url={this.props.data[this.state.currentElementIndex]} />
+        <MainCarElement data={this.props.data} currentElement={this.state.currentElementIndex}/>
 
         <MainCarArrows
           direction="right"
