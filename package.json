@@ -25,6 +25,7 @@
     "express": "^4.17.1",
     "jest": "^25.5.4",
     "jest-environment-enzyme": "^7.1.2",
+    "jest-enzyme": "^7.1.2",
     "path": "^0.12.7",
     "pg": "^8.0.3",
     "react": "^16.13.1",

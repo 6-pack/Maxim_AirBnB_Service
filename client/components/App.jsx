@@ -54,12 +54,18 @@ class App extends React.Component {
   }
 
   render() {
-    return (
-      <div>
-        <h2 className='componentTitle'>More homes you may like</h2>
-        <MainCarousel data={this.state.data}/>
-      </div>
-    );
+    if (this.state.data.length === 0) {
+      return (
+        <div className='loading_div'>Loading data, please wait.</div>
+      )
+    } else {
+      return (
+        <div>
+          <h2 className='componentTitle'>More homes you may like</h2>
+          <MainCarousel data={this.state.data}/>
+        </div>
+      );
+    }
   }
 }
 
