@@ -9,7 +9,8 @@ const MainCarElement = ({url}) => {
 
   return (
     <div>
-      <div className='mainCarElement' style={styles}></div>
+      <img src={url} alt='something brazilian'></img>
+      <div className='MainCarElement' style={styles}></div>
       <div></div>
     </div>
   )
