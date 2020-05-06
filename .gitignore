@@ -6,5 +6,4 @@ public/bundle.js
 
 .eslintrc.js
 
-coverage
-
+coverage/
