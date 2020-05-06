@@ -7,12 +7,13 @@ import styled from 'styled-components';
 
 const MHYML_Wrapper = styled.div`
   text-align: center;
+  width: 1032px;
 `;
 
 const MHYML_Section = styled.section`
   display: inline-block;
   box-sizing: border-box;
-  width: 648px;
+  width: 1032px;
   height: 362.66px;
 `;
 

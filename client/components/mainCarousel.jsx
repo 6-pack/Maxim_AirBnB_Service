@@ -1,42 +1,49 @@
 import React from 'react';
 import MainCarElement from './MainCarElement.jsx';
 import MainCarArrows from './MainCarArrows.jsx';
+import styled from 'styled-components';
+
+const MHYML_MC_Wrapper = styled.div`
+  position: relative !important;
+  z-index: 0 !important;
+  height: 320px;
+  width: 1032px;
+  box-sizing: border-box;
+  display: block;
+`;
+
+const MHYML_MC_E_Wrapper = styled.div`
+  margin-left: -8px;
+  margin-right: -8px;
+  overflow: hidden !important;
+  width: 1048px;
+  height: 320px;
+  box-sizing: border-box;
+  display: block;
+`;
+
+const MHYML_Transformer = styled.div`
+  margin-bottom: 0px !important;
+  padding: 0px !important;
+  overflow: visible !important;
+  white-space: nowrap !important;
+  transition: -ms-transform 0.5s ease 0s, -webkit-transform 0.5s ease 0s, transform 0.5s ease 0s !important;
+`;
 
 class MainCarousel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentElementIndex: 0,
+      translateX: 0,
     };
-    this.previousElement = this.previousElement.bind(this);
-    this.nextElement = this.nextElement.bind(this);
-  }
-
-  previousElement() {
-    const lastIndex = this.props.data.length - 1;
-    const { currentElementIndex } = this.state;
-    const shouldResetIndex = currentElementIndex === 0;
-    const index = shouldResetIndex ? lastIndex : currentElementIndex - 1;
-
-    this.setState({
-      currentElementIndex: index,
-    });
-  }
-
-  nextElement() {
-    const lastIndex = this.props.data.length - 1;
-    const { currentElementIndex } = this.state;
-    const shouldResetIndex = currentElementIndex === lastIndex;
-    const index = shouldResetIndex ? 0 : currentElementIndex + 1;
-
-    this.setState({
-      currentElementIndex: index,
-    });
+    let styles = {
+      transform: 'translateX(' + this.state.translateX + '%)',
+    }
   }
 
   render() {
     return (
-      <div className="mainCarousel">
+      <MHYML_MC_Wrapper>
 
         <MainCarArrows
           direction="left"
@@ -44,7 +51,11 @@ class MainCarousel extends React.Component {
           glyph="&#9664;"
         />
 
-        <MainCarElement data={this.props.data} currentElement={this.state.currentElementIndex} />
+        <MHYML_MC_E_Wrapper>
+          <MHYML_Transformer style={this.styles}>
+            {this.props.data.map(room => <MainCarElement data={room} />)}
+          </MHYML_Transformer>
+        </MHYML_MC_E_Wrapper>
 
         <MainCarArrows
           direction="right"
@@ -52,7 +63,7 @@ class MainCarousel extends React.Component {
           glyph="&#9654;"
         />
 
-      </div>
+      </MHYML_MC_Wrapper>
     );
   }
 }

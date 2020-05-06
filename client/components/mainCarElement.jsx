@@ -4,7 +4,7 @@ const MainCarElement = (props) => {
   const styles = {
     width: '350px',
   };
-  const currentRoom = props.data[props.currentElement];
+  const currentRoom = props.data;
   return (
     <div style={styles}>
       <img src={currentRoom.img_src[0]} alt="something brazilian" />
