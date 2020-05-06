@@ -1,4 +1,12 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const MHYML_Element = styled.div`
+  width: 33.333% !important;
+  display: inline-block !important;
+  vertical-align: top !important;
+  white-space: normal !important;
+`;
 
 const MainCarElement = (props) => {
   const styles = {
@@ -6,7 +14,7 @@ const MainCarElement = (props) => {
   };
   const currentRoom = props.data;
   return (
-    <div style={styles}>
+    <MHYML_Element>
       <img src={currentRoom.img_src[0]} alt="something brazilian" />
       <div>
         <span>
@@ -18,7 +26,7 @@ const MainCarElement = (props) => {
       </div>
       <div><span>{currentRoom.description}</span></div>
       <div><span>{currentRoom.price}</span></div>
-    </div>
+    </MHYML_Element>
   );
 };
 

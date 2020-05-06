@@ -37,7 +37,7 @@ class MainCarousel extends React.Component {
       translateX: 0,
     };
     let styles = {
-      transform: 'translateX(' + this.state.translateX + '%)',
+      width: '350px',
     }
   }
 
@@ -52,8 +52,8 @@ class MainCarousel extends React.Component {
         />
 
         <MHYML_MC_E_Wrapper>
-          <MHYML_Transformer style={this.styles}>
-            {this.props.data.map(room => <MainCarElement data={room} />)}
+          <MHYML_Transformer>
+              {this.props.data.map(room => <MainCarElement data={room} key={room.room_id}/>)}
           </MHYML_Transformer>
         </MHYML_MC_E_Wrapper>
 
