@@ -9,9 +9,15 @@ class App extends React.Component {
     this.state = {
       data: []
     };
+
+    this.getRoomsData = this.getRoomsData.bind(this);
   }
 
   componentDidMount() {
+    this.getRoomsData();
+  }
+
+  getRoomsData() {
     Axios.get('/rooms')
       .then((results) => {
         console.log(results.data);

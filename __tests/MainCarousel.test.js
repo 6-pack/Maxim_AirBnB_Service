@@ -1,5 +1,6 @@
 import React from 'react';
 import MainCarousel from '../client/components/MainCarousel.jsx';
+import MainCarArrows from '../client/components/MainCarArrows.jsx';
 import { shallow, mount } from 'enzyme';
 
 describe('Unit tests', () => {
@@ -40,4 +41,31 @@ describe('Unit tests', () => {
     const wrapper = mount(<MainCarousel data={sampleData}/>);
     expect(wrapper).toExist();
   });
+  test('should invoke previousElement when left arrow clicked', () => {
+    const wrapper = mount(<MainCarousel data={sampleData}/>);
+    const mock = jest.fn();
+    wrapper.instance().previousElement = mock;
+    wrapper.instance().forceUpdate();
+    const leftButton = wrapper.find(MainCarArrows).at(0);
+    leftButton.simulate('click');
+    expect(mock).toHaveBeenCalled();
+  });
+  test('should invoke nextElement when right arrow clicked', () => {
+    const wrapper = mount(<MainCarousel data={sampleData}/>);
+    const mock = jest.fn();
+    wrapper.instance().nextElement = mock;
+    wrapper.instance().forceUpdate();
+    const leftButton = wrapper.find(MainCarArrows).at(1);
+    leftButton.simulate('click');
+    expect(mock).toHaveBeenCalled();
+  });
+  // test('should update state whe previousElement is invoked', () => {
+  //   const wrapper = mount(<MainCarousel data={sampleData}/>);
+  //   const mock = jest.fn();
+  //   wrapper.instance().nextElement = mock;
+  //   wrapper.instance().forceUpdate();
+  //   const leftButton = wrapper.find(MainCarArrows).at(1);
+  //   leftButton.simulate('click');
+  //   expect(mock).toHaveBeenCalled();
+  // });
 })

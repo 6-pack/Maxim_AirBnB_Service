@@ -47,6 +47,13 @@ describe('Unit tests', () => {
     const wrapper = mount(<App />);
     expect(wrapper).toExist();
   });
-
+  test('should invoke getRoomsData on componentDidMount', () => {
+    const wrapper = mount(<App />);
+    const mock = jest.fn();
+    wrapper.instance().getRoomsData = mock;
+    wrapper.instance().forceUpdate();
+    wrapper.instance().componentDidMount();
+    expect(mock).toHaveBeenCalled();
+  });
 
 })
