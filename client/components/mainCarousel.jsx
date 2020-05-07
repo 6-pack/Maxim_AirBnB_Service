@@ -82,14 +82,15 @@ class MainCarousel extends React.Component {
   render() {
     return (
       <MHYML_MC_Wrapper>
-        <MHYML_Arrow_Left>
-          <MainCarArrows
-          direction="left"
-          clickFunction={this.previousElement}
-          glyph="&#9664;"
-          />
-        </MHYML_Arrow_Left>
-
+        {this.state.translateX < -32 &&
+          <MHYML_Arrow_Left>
+            <MainCarArrows
+            direction="left"
+            clickFunction={this.previousElement}
+            glyph="&#9664;"
+            />
+          </MHYML_Arrow_Left>
+        }
 
         <MHYML_MC_E_Wrapper>
           <MHYML_Transformer state={this.state.translateX}>
@@ -97,13 +98,15 @@ class MainCarousel extends React.Component {
           </MHYML_Transformer>
         </MHYML_MC_E_Wrapper>
 
-        <MHYML_Arrow_Right>
-          <MainCarArrows
-            direction="right"
-            clickFunction={this.nextElement}
-            glyph="&#9654;"
-          />
-        </MHYML_Arrow_Right>
+        {this.state.translateX > -267 &&
+          <MHYML_Arrow_Right>
+            <MainCarArrows
+              direction="right"
+              clickFunction={this.nextElement}
+              glyph="&#9654;"
+            />
+          </MHYML_Arrow_Right>
+        }
       </MHYML_MC_Wrapper>
     );
   }
