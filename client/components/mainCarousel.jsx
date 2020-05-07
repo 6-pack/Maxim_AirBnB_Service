@@ -28,6 +28,7 @@ const MHYML_Transformer = styled.div`
   overflow: visible !important;
   white-space: nowrap !important;
   transition: -ms-transform 0.5s ease 0s, -webkit-transform 0.5s ease 0s, transform 0.5s ease 0s !important;
+  transform: translateX(${(props) => props.state}%);
 `;
 
 const MHYML_Arrow_Left = styled.div`
@@ -56,9 +57,11 @@ class MainCarousel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      translateX: 0,
+      translateX: -33.33333,
     };
   }
+
+  
 
   render() {
     return (
@@ -73,7 +76,7 @@ class MainCarousel extends React.Component {
 
 
         <MHYML_MC_E_Wrapper>
-          <MHYML_Transformer>
+          <MHYML_Transformer state={this.state.translateX}>
               {this.props.data.map(room => <MainCarElement data={room} key={room.room_id}/>)}
           </MHYML_Transformer>
         </MHYML_MC_E_Wrapper>

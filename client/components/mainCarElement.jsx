@@ -9,9 +9,6 @@ const MHYML_Element = styled.div`
 `;
 
 const MainCarElement = (props) => {
-  const styles = {
-    width: '350px',
-  };
   const currentRoom = props.data;
   return (
     <MHYML_Element>
