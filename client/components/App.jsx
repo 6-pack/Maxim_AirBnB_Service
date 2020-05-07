@@ -8,6 +8,7 @@ import styled from 'styled-components';
 const MHYML_Wrapper = styled.div`
   text-align: center;
   width: 1032px;
+  display: inline-block;
 `;
 
 const MHYML_Section = styled.section`

@@ -30,26 +30,47 @@ const MHYML_Transformer = styled.div`
   transition: -ms-transform 0.5s ease 0s, -webkit-transform 0.5s ease 0s, transform 0.5s ease 0s !important;
 `;
 
+const MHYML_Arrow_Left = styled.div`
+  left: -32px;
+  width: 24px !important;
+  padding: 0px !important;
+  position: absolute !important;
+  top: 0px !important;
+  bottom: 0px !important;
+  display: block !important;
+  z-index: 1 !important;
+`;
+
+const MHYML_Arrow_Right = styled.div`
+  right: -32px;
+  width: 24px !important;
+  padding: 0px !important;
+  position: absolute !important;
+  top: 0px !important;
+  bottom: 0px !important;
+  display: block !important;
+  z-index: 1 !important;
+`;
+
 class MainCarousel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       translateX: 0,
     };
-    let styles = {
-      width: '350px',
-    }
   }
 
   render() {
     return (
       <MHYML_MC_Wrapper>
-
-        <MainCarArrows
+        <MHYML_Arrow_Left>
+          <MainCarArrows
           direction="left"
           clickFunction={this.previousElement}
           glyph="&#9664;"
-        />
+          />
+        </MHYML_Arrow_Left>
+
 
         <MHYML_MC_E_Wrapper>
           <MHYML_Transformer>
@@ -57,12 +78,13 @@ class MainCarousel extends React.Component {
           </MHYML_Transformer>
         </MHYML_MC_E_Wrapper>
 
-        <MainCarArrows
-          direction="right"
-          clickFunction={this.nextElement}
-          glyph="&#9654;"
-        />
-
+        <MHYML_Arrow_Right>
+          <MainCarArrows
+            direction="right"
+            clickFunction={this.nextElement}
+            glyph="&#9654;"
+          />
+        </MHYML_Arrow_Right>
       </MHYML_MC_Wrapper>
     );
   }
