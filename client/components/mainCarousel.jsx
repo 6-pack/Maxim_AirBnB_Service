@@ -57,11 +57,27 @@ class MainCarousel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      translateX: -33.33333,
+      translateX: 0,
     };
+    this.previousElement = this.previousElement.bind(this);
+    this.nextElement = this.nextElement.bind(this);
   }
 
-  
+  previousElement() {
+    const currentState = this.state.translateX;
+    const newState = currentState + 33.3333333;
+    this.setState({
+      translateX: newState
+    })
+  }
+
+  nextElement() {
+    const currentState = this.state.translateX;
+    const newState = currentState - 33.3333333;
+    this.setState({
+      translateX: newState
+    })
+  }
 
   render() {
     return (
