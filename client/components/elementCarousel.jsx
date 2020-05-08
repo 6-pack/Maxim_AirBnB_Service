@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import ElementArrows from './elementArrows.jsx';
+
 
 const MHYML_EC_E_Wrapper = styled.div`
   overflow: hidden !important;
@@ -16,6 +18,26 @@ const MHYML_Transformer = styled.div`
   white-space: nowrap !important;
   transition: -ms-transform 0.5s ease 0s, -webkit-transform 0.5s ease 0s, transform 0.5s ease 0s !important;
   transform: translateX(${(props) => props.state}%);
+`;
+
+const E_Arrows_Background_Left = styled.div`
+  top: 33%;
+  bottom: auto;
+  position: absolute !important;
+  display: block !important;
+  color: #FFFFFF;
+  z-index: 2 !important;
+  margin-left: 12px !important;
+`;
+
+const E_Arrows_Background_Right = styled.div`
+  top: 33%;
+  bottom: auto;
+  position: absolute !important;
+  display: block !important;
+  color: #FFFFFF;
+  z-index: 2 !important;
+  margin-left: 305px !important;
 `;
 
 class ElementCarousel extends React.Component {
@@ -47,19 +69,59 @@ class ElementCarousel extends React.Component {
   }
 
   previousImage() {
-
+    if (this.state.translateX >= 0) {
+      this.setState({
+        translateX: (this.state.imgData.length-1) * -100
+      })
+    } else {
+      const newTranslateX = this.state.translateX + 100;
+      this.setState({
+        translateX: newTranslateX
+      })
+    }
   }
 
   nextImage() {
-
+    if (this.state.translateX <= (this.state.imgData.length-1) * -100) {
+      this.setState({
+        translateX: 0
+      })
+    } else {
+      const newTranslateX = this.state.translateX - 100;
+      this.setState({
+        translateX: newTranslateX
+      })
+    }
   }
 
   render() {
     return (
       <MHYML_EC_E_Wrapper onMouseEnter={()=>{this.handleMouseEnter()}} onMouseLeave={()=>{this.handleMouseLeave()}}>
+
+        {this.state.hovered &&
+          <E_Arrows_Background_Left>
+            <ElementArrows
+              direction="left"
+              clickFunction={this.previousImage}
+              glyph="&#9664;"
+            />
+          </E_Arrows_Background_Left>
+        }
+
         <MHYML_Transformer state={this.state.translateX}>
           {this.state.imgData.map(image => <img src={image} alt='houses' key={image} style={{borderRadius: '3px'}}></img>)}
         </MHYML_Transformer>
+
+        {this.state.hovered &&
+          <E_Arrows_Background_Right>
+            <ElementArrows
+              direction="right"
+              clickFunction={this.nextImage}
+              glyph="&#9654;"
+            />
+          </E_Arrows_Background_Right>
+        }
+
       </MHYML_EC_E_Wrapper>
 
     )
