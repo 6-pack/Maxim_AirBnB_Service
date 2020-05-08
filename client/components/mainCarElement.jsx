@@ -100,13 +100,29 @@ const MainCarElement = (props) => {
   return (
     <MHYML_Element>
       <MHYML_Element_Wrapper>
-        <ElementCarousel images={currentRoom.img_src}/>
+        <ElementCarousel images={currentRoom.img_src} />
         <MHYML_Element_Info_Top>
-          <MHYML_Room_Type>{currentRoom.room_type}:{' '}{currentRoom.bed_num} beds</MHYML_Room_Type>
+          <MHYML_Room_Type>
+            {currentRoom.room_type}
+            :
+            {' '}
+            {currentRoom.bed_num}
+            {' '}
+            beds
+          </MHYML_Room_Type>
           <MHYLM_Rating_Span>{currentRoom.rating}</MHYLM_Rating_Span>
         </MHYML_Element_Info_Top>
         <MHYML_Info_Mid>{currentRoom.description}</MHYML_Info_Mid>
-        <MHYML_Element_Info_Bottom><MHYML_Bottom_Inner_Div><b>${currentRoom.price_per_night}{' '}</b>{'/ night'}</MHYML_Bottom_Inner_Div></MHYML_Element_Info_Bottom>
+        <MHYML_Element_Info_Bottom>
+          <MHYML_Bottom_Inner_Div>
+            <b>
+              $
+              {currentRoom.price_per_night}
+              {' '}
+            </b>
+            / night
+          </MHYML_Bottom_Inner_Div>
+        </MHYML_Element_Info_Bottom>
       </MHYML_Element_Wrapper>
     </MHYML_Element>
   );

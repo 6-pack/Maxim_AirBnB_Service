@@ -1,7 +1,7 @@
 import React from 'react';
+import styled from 'styled-components';
 import MainCarElement from './MainCarElement.jsx';
 import MainCarArrows from './MainCarArrows.jsx';
-import styled from 'styled-components';
 
 const MHYML_MC_Wrapper = styled.div`
   position: relative !important;
@@ -67,38 +67,40 @@ class MainCarousel extends React.Component {
     const currentState = this.state.translateX;
     const newState = currentState + 33.3333333;
     this.setState({
-      translateX: newState
-    })
+      translateX: newState,
+    });
   }
 
   nextElement() {
     const currentState = this.state.translateX;
     const newState = currentState - 33.3333333;
     this.setState({
-      translateX: newState
-    })
+      translateX: newState,
+    });
   }
 
   render() {
     return (
       <MHYML_MC_Wrapper>
-        {this.state.translateX < -32 &&
+        {this.state.translateX < -32
+          && (
           <MHYML_Arrow_Left>
             <MainCarArrows
-            direction="left"
-            clickFunction={this.previousElement}
-            glyph="&#9664;"
+              direction="left"
+              clickFunction={this.previousElement}
+              glyph="&#9664;"
             />
           </MHYML_Arrow_Left>
-        }
+          )}
 
         <MHYML_MC_E_Wrapper>
           <MHYML_Transformer state={this.state.translateX}>
-              {this.props.data.map(room => <MainCarElement data={room} key={room.room_id}/>)}
+            {this.props.data.map((room) => <MainCarElement data={room} key={room.room_id} />)}
           </MHYML_Transformer>
         </MHYML_MC_E_Wrapper>
 
-        {this.state.translateX > -267 &&
+        {this.state.translateX > -267
+          && (
           <MHYML_Arrow_Right>
             <MainCarArrows
               direction="right"
@@ -106,7 +108,7 @@ class MainCarousel extends React.Component {
               glyph="&#9654;"
             />
           </MHYML_Arrow_Right>
-        }
+          )}
       </MHYML_MC_Wrapper>
     );
   }

@@ -1,7 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
-import MainCarousel from './MainCarousel.jsx';
 import styled from 'styled-components';
+import MainCarousel from './mainCarousel.jsx';
 
 // styling:
 
@@ -32,7 +32,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      data: []
+      data: [],
     };
 
     this.getRoomsData = this.getRoomsData.bind(this);
