@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import ElementCarousel from './elementCarousel.jsx';
 
 const MHYML_Element_Wrapper = styled.div`
   padding-left: 8px !important;
@@ -99,7 +100,7 @@ const MainCarElement = (props) => {
   return (
     <MHYML_Element>
       <MHYML_Element_Wrapper>
-        <img src={currentRoom.img_src[0]} alt="something brazilian" />
+        <ElementCarousel images={currentRoom.img_src}/>
         <MHYML_Element_Info_Top>
           <MHYML_Room_Type>{currentRoom.room_type}:{' '}{currentRoom.bed_num} beds</MHYML_Room_Type>
           <MHYLM_Rating_Span>{currentRoom.rating}</MHYLM_Rating_Span>
