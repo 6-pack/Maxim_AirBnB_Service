@@ -24,15 +24,41 @@ class ElementCarousel extends React.Component {
 
     this.state = {
       imgData: this.props.images,
-      translateX: -50
+      translateX: 0,
+      hovered: false
     }
+
+    this.previousImage = this.previousImage.bind(this);
+    this.nextImage = this.nextImage.bind(this);
+    this.handleMouseEnter = this.handleMouseEnter.bind(this);
+    this.handleMouseLeave = this.handleMouseLeave.bind(this);
+  }
+
+  handleMouseEnter() {
+    this.setState({
+      hovered: true
+    })
+  }
+
+  handleMouseLeave() {
+    this.setState({
+      hovered: false
+    })
+  }
+
+  previousImage() {
+
+  }
+
+  nextImage() {
+
   }
 
   render() {
     return (
-      <MHYML_EC_E_Wrapper>
+      <MHYML_EC_E_Wrapper onMouseEnter={()=>{this.handleMouseEnter()}} onMouseLeave={()=>{this.handleMouseLeave()}}>
         <MHYML_Transformer state={this.state.translateX}>
-          {this.state.imgData.map(image => <img src={image} alt='houses' key={image}></img>)}
+          {this.state.imgData.map(image => <img src={image} alt='houses' key={image} style={{borderRadius: '3px'}}></img>)}
         </MHYML_Transformer>
       </MHYML_EC_E_Wrapper>
 
