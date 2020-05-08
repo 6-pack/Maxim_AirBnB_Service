@@ -17,7 +17,7 @@ const MHYML_MC_E_Wrapper = styled.div`
   margin-right: -8px;
   overflow: hidden !important;
   width: 1048px;
-  height: 320px;
+  height: 330px;
   box-sizing: border-box;
   display: block;
 `;
