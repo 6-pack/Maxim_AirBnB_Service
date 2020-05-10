@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const E_Arrows = styled.div`
   z-index: 2 !important;
+  color: white !important;
 `;
 
 

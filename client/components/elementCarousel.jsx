@@ -26,17 +26,21 @@ const E_Arrows_Background_Left = styled.div`
   position: absolute !important;
   display: block !important;
   color: #FFFFFF;
-  z-index: 2 !important;
+  z-index: 1 !important;
   margin-left: 12px !important;
 `;
 
+
+// height: 20px;
+// width: 20px;
+// border - radius: 50 %;
+// background - color: black;
 const E_Arrows_Background_Right = styled.div`
   top: 33%;
   bottom: auto;
   position: absolute !important;
   display: block !important;
-  color: #FFFFFF;
-  z-index: 2 !important;
+  z-index: 1 !important;
   margin-left: 305px !important;
 `;
 
