@@ -43,7 +43,7 @@ class App extends React.Component {
   }
 
   getRoomsData() {
-    Axios.get('http://localhost:3004/rooms')
+    Axios.get('/rooms')
       .then((results) => {
         console.log(results.data);
         this.setState({
