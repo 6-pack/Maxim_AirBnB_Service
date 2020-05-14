@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+
+  component_maxim:
+    build: Maxim_AirBnB_Service_Comp/
+    depends_on:
+      - 'database_maxim'
+    ports:
+      - '3004:3004'
+
+  database_maxim:
+    build: Maxim_AirBnB_Service_DB/
+    # ports:
+    #   - '5432:5432'
