@@ -2,7 +2,7 @@ module.exports = {
   dbConfig: {
     user: 'postgres',
     password: 'postgres',
-    host: 'database_maxim',
+    host: 'localhost',
     database: 'airbnb_mhyml',
     port: 5432
   }
