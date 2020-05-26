@@ -4,6 +4,10 @@ const dist_dir = path.join(__dirname + '/public');
 const CompressionPlugin = require('compression-webpack-plugin');
 const webpack = require('webpack');
 
+// people are running webpack in prod mode-- what does does that do?
+  // one thing this does messes with styled components.
+  // answer is directly in styled components docs (a page gives exact answer, find it)
+
 module.exports = {
   entry: `${src_dir}/index.jsx`,
   output: {
